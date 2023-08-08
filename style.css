@@ -1,0 +1,459 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'PT Sans', sans-serif;
+    color: white;
+}
+html,body{
+    width: 100%;
+    height: 100%;
+}
+
+
+#animator
+{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    /* display: none; */
+}
+.context {
+    width: 100%;
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.context>h1{
+    text-align: center;
+    color: black;
+    font-size: 100px;
+    text-shadow: 0px 0px 5px white;
+}
+
+
+.area{
+    background: black;  
+    width: 100%;
+    height:100vh;
+}
+
+.circles{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.circles li{
+    position: absolute;
+    display: block;
+    list-style: none;
+    width: 20px;
+    height: 20px;
+    background: rgba(255, 255, 255, 0.2);
+    animation: animate 25s linear infinite;
+    bottom: -150px;
+    
+}
+
+.circles li:nth-child(1){
+    left: 25%;
+    width: 80px;
+    height: 80px;
+    animation-delay: 0s;
+}
+
+
+.circles li:nth-child(2){
+    left: 10%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 2s;
+    animation-duration: 12s;
+}
+
+.circles li:nth-child(3){
+    left: 70%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 4s;
+}
+
+.circles li:nth-child(4){
+    left: 40%;
+    width: 60px;
+    height: 60px;
+    animation-delay: 0s;
+    animation-duration: 18s;
+}
+
+.circles li:nth-child(5){
+    left: 65%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 0s;
+}
+
+.circles li:nth-child(6){
+    left: 75%;
+    width: 110px;
+    height: 110px;
+    animation-delay: 3s;
+}
+
+.circles li:nth-child(7){
+    left: 35%;
+    width: 150px;
+    height: 150px;
+    animation-delay: 7s;
+}
+
+.circles li:nth-child(8){
+    left: 50%;
+    width: 25px;
+    height: 25px;
+    animation-delay: 15s;
+    animation-duration: 45s;
+}
+
+.circles li:nth-child(9){
+    left: 20%;
+    width: 15px;
+    height: 15px;
+    animation-delay: 2s;
+    animation-duration: 35s;
+}
+
+.circles li:nth-child(10){
+    left: 85%;
+    width: 150px;
+    height: 150px;
+    animation-delay: 0s;
+    animation-duration: 11s;
+}
+
+
+
+@keyframes animate {
+
+    0%{
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+        border-radius: 0;
+    }
+
+    100%{
+        transform: translateY(-1000px) rotate(720deg);
+        opacity: 0;
+        border-radius: 50%;
+    }
+
+}
+
+
+/* ------------------------------------- */
+
+#main
+{
+    height: 100vh;
+    width: 100%;
+    background-color: rgb(19, 19, 19);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5vh;
+    display: none;
+}
+#main>h1
+{
+    font-size: 3.5vw;
+    display: flex;
+    align-items: center;
+}
+#main>h1 span
+{
+    margin: 0 15px;
+    display: flex;
+    align-items: center;
+}
+#main>h1 span img
+{
+    transform: rotate(90deg);
+    height: 3vw;
+    transition: 0.5s ease;
+}
+
+#controller-div
+{
+    display: flex;
+    background-color: rgba(255, 255, 255, 0.081);
+    width: 30vw;
+    height: 8vh;
+    border-radius: 10px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 0.3vw;
+}
+#controller-div>h3
+{
+    width: 40%;
+    height: 80%;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 100;
+    font-size: 1.2vw;
+    gap: 0.4vw;
+    cursor: pointer;
+}
+#controller-div #encryptbutton
+{
+    background-color: rgba(255, 255, 255, 0.051);
+}
+#controller-div>h3 span
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#controller-div>h3 span img
+{
+    height: 3.3vh;
+}
+
+#encryption-part
+{
+    width: 47vw;
+    /* display: none; */
+}
+#encryption-part>h5
+{
+    font-size: 1vw;
+    font-weight: 100;
+    opacity: .7;
+}
+#encryption-part textarea
+{
+    width: 100%;
+    height: 10vh;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.051);
+    outline: none;
+    font-size: 1vw;
+    border: 1px solid rgba(255, 255, 255, 0.105);
+    padding: 1vh 1vw;
+    margin-top: 2vh;
+    margin-bottom: 7vh
+}
+#encryption-part input
+{
+    width: 100%;
+    height: 6.5vh;
+    background-color: rgba(255, 255, 255, 0.051);
+    border-radius: 10px;
+    outline: none;
+    font-size: 1vw;
+    padding: 1vh 1vw;
+    border: 1px solid rgba(255, 255, 255, 0.105);
+    margin-top: 2vh;
+    margin-bottom: 7vh
+}
+
+#encrypt-btn
+{
+    width: 100%;
+    height: 6.5vh;
+    background-color: rgba(255, 255, 255, 0.051);
+    border-radius: 10px;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4vw;
+    cursor: pointer;
+    transition: all cubic-bezier(0.19, 1, 0.22, 1) 0.5s;
+}
+#encrypt-btn span
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#encrypt-btn span img
+{
+    height: 3vh;
+}
+#encrypt-btn:hover
+{
+    background-color: rgba(255, 255, 255, 0.14);
+}
+
+
+
+
+
+#decryption-part
+{
+    width: 47vw;
+    display: none;
+}
+#decryption-part>h5
+{
+    font-size: 1vw;
+    font-weight: 100;
+    opacity: .7;
+}
+#decryption-part textarea
+{
+    width: 100%;
+    height: 10vh;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.051);
+    outline: none;
+    font-size: 1vw;
+    border: 1px solid rgba(255, 255, 255, 0.105);
+    padding: 1vh 1vw;
+    margin-top: 2vh;
+    margin-bottom: 7vh
+}
+#decryption-part input
+{
+    width: 100%;
+    height: 6.5vh;
+    background-color: rgba(255, 255, 255, 0.051);
+    border-radius: 10px;
+    outline: none;
+    font-size: 1vw;
+    padding: 1vh 1vw;
+    border: 1px solid rgba(255, 255, 255, 0.105);
+    margin-top: 2vh;
+    margin-bottom: 7vh
+}
+
+#decrypt-btn
+{
+    width: 100%;
+    height: 6.5vh;
+    background-color: rgba(255, 255, 255, 0.051);
+    border-radius: 10px;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4vw;
+    cursor: pointer;
+    transition: all cubic-bezier(0.19, 1, 0.22, 1) 0.5s;
+}
+#decrypt-btn span
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#decrypt-btn span img
+{
+    height: 3vh;
+}
+#decrypt-btn:hover
+{
+    background-color: rgba(255, 255, 255, 0.14);
+}
+
+
+#result
+{
+    width: 47vw;
+    height: 6.5vh;
+    background-color: rgba(255, 255, 255, 0.051);
+    border: 1px solid rgba(255, 255, 255, 0.105);
+    border-radius: 10px;
+    display: none;
+}
+
+
+
+
+
+
+@media(max-width:600px)
+{
+    .context>h1
+    {
+        font-size: 15vw;
+    }
+    #main
+    {
+        gap: 3vh;
+    }
+    #main>h1
+    {
+        font-size: 7vw;
+    }
+    #main>h1 span img
+    {
+        height: 7vw;
+    }
+    #controller-div
+    {
+        width: 65vw;
+        height: 6.5vh;
+        padding: 0 1.2vw;
+    }
+    #controller-div>h3
+    {
+        font-size: 3vw;
+        width: 45%;
+    }
+    #encryption-part
+    {
+        width: 85%;
+    }
+    #encryption-part>h5
+    {
+        font-size: 2.8vw;
+    }
+    #encryption-part textarea
+    {
+        font-size: 2.3vw;
+        margin-bottom: 3vh;
+        margin-top: 1vh;
+    }
+    #encryption-part input
+    {
+        font-size: 2.3vw;
+        margin-bottom: 5vh;
+        margin-top: 1vh;
+    }
+
+    #decryption-part
+    {
+        width: 85%;
+    }
+    #decryption-part>h5
+    {
+        font-size: 2.8vw;
+    }
+    #decryption-part textarea
+    {
+        font-size: 2.3vw;
+        margin-bottom: 3vh;
+        margin-top: 1vh;
+    }
+    #decryption-part input
+    {
+        font-size: 2.3vw;
+        margin-bottom: 5vh;
+        margin-top: 1vh;
+    }
+    #result
+    {
+        width: 85%;
+    }
+
+}
